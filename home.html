@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://jetour-uzbekistan.uz/ -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jetour Uzbekistan</title>
+    <link rel="icon" type="image/x-icon" href="https://jetour-uzbekistan.uz/assets/images/favicon-jetour.png">
+    <!-- Main css -->
+    <link rel="stylesheet" href="./Jetour Uzbekistan_files/mainsss.css">
+    <!-- Bootstrap -->
+    <link href="./Jetour Uzbekistan_files/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Font-awesome -->
+    <link rel="stylesheet" href="./Jetour Uzbekistan_files/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- SwiperJS -->
+    <link rel="stylesheet" href="./Jetour Uzbekistan_files/swiper-bundle.min.css">
+</head>
+
+<body>
+    <style>
+        .loader {
+            width: 100%;
+            height: 100vh;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+        }
+
+        img {
+            width: 290px;
+        }
+    </style>
+    <div class="loader" style="display: none;">
+        <img src="./Jetour Uzbekistan_files/loader.png" alt="">
+    </div>
+
+    <style>
+        .drive-modal {
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000000a7;
+            display: none;
+            transition: .5s;
+        }
+
+        .drive-modal.active {
+            display: flex;
+            /* top: 0; */
+        }
+
+        .drive-modal .container {
+            width: 400px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 6px;
+        }
+
+        .drive-modal input,
+        .drive-modal select {
+            margin-top: 8px;
+            border-radius: 0px;
+            height: 48px;
+        }
+
+        .modalClose {
+            cursor: pointer;
+        }
+
+        .modal_btn {
+            width: 100%;
+            background: #DF1211;
+            height: 48px;
+            border: none;
+            margin-top: 8px;
+            color: #fff;
+        }
+    </style>
+
+    <div class="drive-modal">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="modal-header d-flex justify-content-between">
+                        <h2>Тест драйв</h2>
+                        <h4><i class="fa-solid fa-xmark modalClose"></i></h4>
+                    </div>
+                    <form action="https://jetour-uzbekistan.uz/" method="post">
+                        <select class="form-select selct" name="location" required="">
+                            <option selected="">Выберите</option>
+                            <option value="Andijon">Andijon</option>
+                            <option value="Buxoro">Buxoro</option>
+                            <option value="Farg`ona">Farg`ona</option>
+                            <option value="Jizzax">Jizzax</option>
+                            <option value="Xorazm">Xorazm</option>
+                            <option value="Namangan">Namangan</option>
+                            <option value="Navoiy">Navoiy</option>
+                            <option value="Qashqadaryo">Qashqadaryo</option>
+                            <option value="Qoraqalpog`iston">Qoraqalpog`iston</option>
+                            <option value="Samarqand">Samarqand</option>
+                            <option value="Sirdaryo">Sirdaryo</option>
+                            <option value="Surxandaryo">Surxandaryo</option>
+                            <option value="Toshkent">Toshkent</option>
+                        </select>
+                        <select class="form-select selct" name="model" required="">
+                            <option value="JETOUR DASHING">JETOUR DASHING</option>
+                            <option value="X70">X70</option>
+                            <option value="Jetour X70 Plus">Jetour X70 Plus</option>
+                            <option value="Jetour X90 Plus">Jetour X90 Plus</option>
+                        </select>
+                        <input type="text" name="fullname" class="form-control inp" placeholder="Имя" required="">
+                        <input type="text" name="phone" class="form-control inp" placeholder="Тел" required="">
+                        <div>
+                            <button type="submit" name="drive_load" class="modal_btn">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        header {
+            width: 100%;
+            background: #0000001b;
+            padding: 20px 0;
+            backdrop-filter: blur(30px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 777;
+        }
+
+        .nav-cont {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu_btn {
+            width: 30px;
+            cursor: pointer;
+        }
+
+        header img {
+            width: 250px;
+        }
+
+        .menu_btn div {
+            width: 25px;
+            height: 2px;
+            background: #fff;
+            margin-top: 6px;
+            border-radius: 3px;
+        }
+
+        .nav_btn button {
+            padding: 5px 15px;
+            border-radius: 30px;
+            border: none;
+            background: #fff;
+            transition: .3s;
+        }
+
+        .nav_btn button:hover {
+            background: #bebebe;
+        }
+
+        @media (max-width: 575px) {
+            .nav_btn button {
+                display: none;
+            }
+
+            header img {
+                width: 200px;
+            }
+
+            .nav-menu {
+                width: 100% !important;
+            }
+
+            .nav-menu i {
+                font-size: 25px !important;
+            }
+        }
+
+        .nav-menu {
+            width: 400px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: -600px;
+            background: #fff;
+            transition: .5s;
+            z-index: 888;
+        }
+
+        .nav-menu.active {
+            left: 0;
+        }
+
+        .nav-menu i {
+            font-size: 27px;
+            cursor: pointer;
+        }
+
+        .nav-footer {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+            color: #999999;
+        }
+
+        .nav-footer footer {
+            width: 100%;
+            background: #E9E9E9;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding-top: 8px;
+        }
+
+        .nav-content {
+            margin-bottom: 100px;
+            padding-bottom: 5px;
+        }
+
+        .nav-content button {
+            padding: 5px 15px;
+            border-radius: 30px;
+            border: none;
+            background: #000;
+            color: #fff;
+            margin-bottom: 20px;
+            transition: .3s;
+        }
+
+        .nav-content button:hover {
+            background: #363636;
+        }
+
+        .navigation {
+            width: 100%;
+            margin-top: 60px;
+        }
+
+        .navigation a {
+            display: block;
+            padding: 10px;
+            border-bottom: 1px solid #E9E9E9;
+            color: #DF1211;
+            text-decoration: none;
+            font-size: 18px;
+            transition: .3s;
+            font-weight: 600;
+        }
+
+        .navigation a:hover {
+            background: #f5f4f4;
+        }
+    </style>
+
+    <div class="nav-menu">
+        <div class="container">
+            <div class="nav-header mt-2 w-100 d-flex justify-content-between align-items-center">
+                <span></span>
+                <img class="w-50" src="./Jetour Uzbekistan_files/darklogo.png" alt="">
+                <i class="close_header fa-solid fa-xmark"></i>
+            </div>
+            <div class="navigation">
+                <a href="https://jetour-uzbekistan.uz/#models">Modellar</a>
+                <a href="https://jetour-uzbekistan.uz/#about">Biz haqimizda</a>
+                <a href="https://jetour-uzbekistan.uz/#news">Yangiliklar</a>
+                <a href="https://jetour-uzbekistan.uz/#branch">Filiallar</a>
+                <a href="https://jetour-uzbekistan.uz/#contact">Bog'lanish</a>
+            </div>
+        </div>
+
+        <div class="nav-footer">
+            <div class="nav-content">
+                <button class="testDriveBtn">Test drive</button>
+                <p>Tel.: +998 91 033 03 03</p>
+                <p>Email: jetouruzbg@mail.com</p>
+            </div>
+            <footer>
+                <b class="mt-2">© 2023. JETOUR UZBEKISTAN</b>
+                <p><a class="text-decoration-none" href="https://www.unical.uz/">UNICAL SOLUTIONS</a> tomonidan ishlab
+                    chiqarilgan</p>
+            </footer>
+        </div>
+    </div>
+
+    <header>
+        <div class="container nav-cont">
+            <div class="menu_btn">
+                <div></div>
+                <div></div>
+            </div>
+            <div class="logo">
+                <a href="https://jetour-uzbekistan.uz/">
+                    <img src="./Jetour Uzbekistan_files/logo-white.png" alt="">
+                </a>
+            </div>
+            <div class="nav_btn">
+                <button class="testDriveBtn">Test drive</button>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="swiper mySwiper vd-wrapper swiper-initialized swiper-horizontal swiper-backface-hidden">
+        <div class="swiper-wrapper " id="swiper-wrapper-ed4411109d62aadac" aria-live="polite">
+            <div class="swiper-slide vd-carusel swiper-slide-active" role="group" aria-label="1 / 2"
+                style="width: 1583px; margin-right: 30px;">
+                <video src="./assets/videos/JETOUR DASHING.mp4" loop="" autoplay="" muted=""></video>
+            </div>
+            <div class="swiper-slide vd-carusel swiper-slide-next" role="group" aria-label="2 / 2"
+                style="width: 1583px; margin-right: 30px;">
+                <video src="./assets/videos/v1.mp4" loop="" autoplay="" muted=""></video>
+            </div>
+
+        </div>
+        <div class="vd-pg-wrapper">
+            <div
+                class="swiper-pagination vd-carusel-pg swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal">
+                <span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button"
+                    aria-label="Go to slide 1" aria-current="true"></span><span class="swiper-pagination-bullet"
+                    tabindex="0" role="button" aria-label="Go to slide 2"></span></div>
+            <button class="pauseBtn"><i class="fa-solid fa-pause"></i></button>
+            <button class="playBtn"><i class="fa-solid fa-play"></i></button>
+        </div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+    </div>
+
+    <div class="after-vd-carusel">
+        <h1>Kelajagingizni ulovlang!</h1>
+        <a href="https://jetour-uzbekistan.uz/#models" class="btn_red text-decoration-none">Batafsil <svg width="11"
+                height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 10L0 0C0.846154 1.66667 2.53846 6 2.53846 10C2.53846 14 0.846154 18.3333 0 20L11 10Z"
+                    fill="white"></path>
+            </svg>
+        </a>
+        <p>Barcha to'lov turlari bilan, qulay narxlarda</p>
+    </div>
+
+    <div class="jetaur_birth">
+        <div class="container">
+            <div class="row">
+                <h1 class="title_1">Jetour - sayohat qilish uchun yaratilgan avtomobil!</h1>
+                <p class="smallTitle">Yo'nalishni tanlang, yo'lga chiqing</p>
+            </div>
+        </div>
+        <div class="birth_image">
+            <img src="./Jetour Uzbekistan_files/birth.png" alt="" class="w-100">
+        </div>
+    </div>
+
+    <div class="models" id="models">
+        <h1 class="title_2">Modellar</h1>
+        <div class="model_name_btn">
+
+            <img src="./Jetour Uzbekistan_files/3-removebg-preview (1).png" alt="" width="200"
+                class="object-fit-contain">
+            </button>
+
+        </div>
+        <a href="https://jetour-uzbekistan.uz/models?model=JETOUR%20DASHING" class="model_href">
+            <div class="model_images container">
+                <img id="modelimage" src="./Jetour Uzbekistan_files/3.png" alt="" class="object-fit-contain">
+            </div>
+            <button class="btn_red mb-3">JETOUR DASHING <svg width="11" height="20" viewBox="0 0 11 20" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 10L0 0C0.846154 1.66667 2.53846 6 2.53846 10C2.53846 14 0.846154 18.3333 0 20L11 10Z"
+                        fill="white"></path>
+                </svg>
+            </button>
+        </a>
+    </div>
+
+    <div class="about" id="about">
+        <div class="container">
+            <h1 class="title_1">Hayotning har qanday qiyin yo'lida sizga hamroh.</h1>
+            <p class="smallTitle">Yo'nalishni tanlang va yo'lga chiqing</p>
+        </div>
+    </div>
+
+    <div class="about2">
+        <div class="container text-center">
+            <h1 class="title_2">JETOUR - bu</h1>
+        </div>
+    </div>
+
+    <div class="about3">
+        <div class="container">
+            <h1 class="title_1">vaqt sinovidan o'tgan sifat!</h1>
+            <p>Jetour kompaniyasi 1997-yilda tashkil qilingan hoding kompaniya negizida 2018-yilda tashkil topgan.
+                Asosiy faoliyati sayohatga mo’ljallangan oilaviy krossoverlar ishlab chiqarish hisoblanadi. Brendning
+                xitoycha nomi "Jietu" deb talaffuz qilinadi va o’zbek tiliga eng yaxshi tarjimasi bu "G'alaba yo'li"
+                ma’nosini anglatadi. Jetourning butun mahsulot assortimenti 5, 6 yoki 7 o‘rinli konfiguratsiya
+                variantlari bilan o‘rta segment uchun mo’ljallangan , shu bilan birga ichki yonuv dvigatelli, to‘liq
+                elektr, plagin-gibrid va kelajakda vodorodli avtomobillar ham ishlab chiqarishni ko’zda tutadi. 2018-
+                yilning yanvar oyida Pekindagi avtoko’rgazmada Jetour X70S oilaviy SUV ni va Jetour X nomli konsep
+                avtomobillarini taqdim etdi. O’sha yilning o’zidayoq X70 oylik sotuvlarini 10.000 donadan oshirishga
+                erishgan. 2019-yilda muvaffaqiyatli tarzda sotuvlar esa 134.000 donadan oshadi va shu tariqa Jetour
+                katta bozorlarga yuqari tezlikda krishga erishgan. Jetourning umumiy savdo hajmi 300 000 donadan oshdi
+                va 28 oy ichida 300 000 sotuv hajmiga erishgan birinchi Xitoy brendiga aylandi.2022 yilning iyuligacha
+                Jetour dunyoning 30 dan ortiq mamlakatlariga kirdi va 700 millionga yaqin xaridorga ega bo’ldi. Jetour
+                rasmiy dillerlik tarmog'ining umumiy soni 300 dan oshdi va 2025 yil oxiriga kelib 1500 taga etishi
+                kutilayabdi. Hozirgi paytda kompaniya tarkibida X90 PLUS , Shanhai L9, Traveller ,X70 PLUS, X70, Dashing
+                kabi o’nlab modellarni taqdim etib ulgurdi.</p>
+        </div>
+        <img src="./Jetour Uzbekistan_files/image_2023-12-06_10-30-18.png" alt="" class="about_full_img">
+        <div class="container">
+            <div class="about_logo">
+                <img src="./Jetour Uzbekistan_files/logo-white.png" alt="">
+            </div>
+            <p>Brend nomi inglizcha JET (jet) va TOUR (sayohat) so‘zlarining birikmasi ma'nolarini ham ifodalay oladi.
+                Bu avtomobilda sayohat qilish shaxsiy samolyotda uchish kabi rohatbag'ishlashi va nihoyatda qulay
+                bo‘lishi mumkinligini anglatadi.Brend turli sohalarda tinmay mehnat qiladigan va oxir-oqibat o‘z
+                maqsadlariga erishadigan, yangi ufqlarni ochadigan, baxtli uyg‘un hayot izlovchilar uchun mo‘ljallangan.
+            </p>
+        </div>
+    </div>
+
+    <div class="news" id="news">
+        <h1 class="title_2">So'ngi yangiliklar</h1>
+        <div class="container">
+            <div class="swiper mySwiperNews mt-5 swiper-initialized swiper-horizontal swiper-css-mode">
+                <div class="swiper-wrapper" id="swiper-wrapper-aeb11bf786b93d02" aria-live="off">
+                    <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 1">
+                        <div class="col">
+                            <img class="w-100" style="border-radius: 30px 30px 0 0;"
+                                src="./Jetour Uzbekistan_files/dlsX3YkDZGi6viaKL0umMFWzWidbqBdY.jpg" alt="">
+                            <div class="card-descr p-3" style="background: #F5F5F5;">
+                                <a
+                                    href="https://jetour-uzbekistan.uz/news?title=Jetourda%20dunyo%20bo%27ylab%20sayohatga%20start%20berildi">
+                                    <b>Jetourda dunyo bo'ylab sayohatga start berildi</b>
+                                </a>
+                                <p class="text-secondary">2023-12-05 19:30:23</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+            </div>
+        </div>
+        <div class="container news_text">
+            <p>Veb-saytda joylashgan JETOUR brendi mahsulotlari narxlari haqidagi ma'lumotlar faqat ma'lumot uchun
+                mo'ljallangan. Ko'rsatilgan narxlar JETOUR dilerlarining haqiqiy narxlaridan farq qilishi mumkin. JET0UR
+                mahsulotlarining joriy narxlari haqida batafsil ma'lumot olish uchun JETOUR dilerlariga murojaat qiling.
+                JETOUR brendining har qanday mahsulotini sotib olish shaxsiy oldi-sotdi shartnomasi shartlariga muvofiq
+                amalga oshiriladi. Ko'rsatilgan avtomobil tasvirlari haqiqiy avtomobildan farq qilishi mumkin.</p>
+        </div>
+    </div>
+
+    <div class="branch" id="branch">
+        <h1 class="title_2 mb-3">Bizning filiallar</h1>
+        <div class="container">
+            <div class="row pb-5">
+                <div class="col-12 col-lg-5 filial">
+                    <h3 class="mt-2 active id_8"> BOSH OFIS SERGELI 6A 54-UY</h3>
+                </div>
+                <div class="col-12 col-lg-7">
+                    <iframe class="w-100 map" src="./Jetour Uzbekistan_files/maps.html" width="600" height="450"
+                        style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        footer {
+            width: 100%;
+            background: #000;
+            padding-top: 40px;
+        }
+
+        .footer-logo {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            border-top: 2px solid #1D1D1D;
+            padding: 40px 0;
+        }
+
+        .footer-logo img {
+            width: 250px;
+        }
+
+        .footer-social {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-social a {
+            text-decoration: none;
+            width: 55px;
+            height: 55px;
+            background: #1D1D1D;
+            margin: 10px;
+            padding: 8px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .3s;
+        }
+
+        .footer-social a:hover {
+            background: #2f2f2f;
+        }
+
+        .footer-social a i {
+            font-size: 21px;
+            color: #fff;
+        }
+
+        .footer-email h5 {
+            margin: 0;
+            padding: 0 20px
+        }
+
+        .footer-email {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            color: #fff;
+            padding: 40px 0;
+        }
+
+        .footer-end {
+            width: 100%;
+            background: #1D1D1D;
+            padding: 6px 0;
+            color: #6b6a6a;
+            font-size: 18px;
+        }
+
+        .footer-end a {
+            color: #6b6a6a;
+        }
+
+        .footer-end .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-end p {
+            position: relative;
+            top: 5px;
+        }
+
+        .footer-social img {
+            width: 20px;
+        }
+    </style>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="./Jetour Uzbekistan_files/loader.png" alt="">
+            </div>
+            <div class="footer-social">
+                <a href="https://youtube.com/@fawbestuneuz4554?si=W5XdINmJCmBbNTa8"><i
+                        class="fa-brands fa-youtube"></i></a>
+                <a
+                    href="https://www.instagram.com/jetour_uzbekistan/?utm_source=ig_web_button_share_sheet&amp;igshid=OGQ5ZDc2ODk2ZA=="><svg
+                        width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 8.75C11.138 8.75 10.3114 9.09241 9.7019 9.7019C9.09241 10.3114 8.75 11.138 8.75 12C8.75 12.862 9.09241 13.6886 9.7019 14.2981C10.3114 14.9076 11.138 15.25 12 15.25C12.862 15.25 13.6886 14.9076 14.2981 14.2981C14.9076 13.6886 15.25 12.862 15.25 12C15.25 11.138 14.9076 10.3114 14.2981 9.7019C13.6886 9.09241 12.862 8.75 12 8.75Z"
+                            fill="white"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M6.76982 3.08194C10.2458 2.69664 13.7538 2.69664 17.2298 3.08194C19.1288 3.29394 20.6598 4.78894 20.8828 6.69494C21.295 10.2196 21.295 13.7803 20.8828 17.3049C20.6598 19.2109 19.1288 20.7059 17.2308 20.9189C13.7545 21.3043 10.2462 21.3043 6.76982 20.9189C4.87082 20.7059 3.33982 19.2109 3.11682 17.3059C2.70455 13.781 2.70455 10.2199 3.11682 6.69494C3.33982 4.78894 4.87082 3.29394 6.76982 3.08194ZM16.9998 5.99994C16.7346 5.99994 16.4802 6.1053 16.2927 6.29284C16.1052 6.48037 15.9998 6.73473 15.9998 6.99994C15.9998 7.26516 16.1052 7.51951 16.2927 7.70705C16.4802 7.89459 16.7346 7.99994 16.9998 7.99994C17.265 7.99994 17.5194 7.89459 17.7069 7.70705C17.8945 7.51951 17.9998 7.26516 17.9998 6.99994C17.9998 6.73473 17.8945 6.48037 17.7069 6.29284C17.5194 6.1053 17.265 5.99994 16.9998 5.99994ZM7.24982 11.9999C7.24982 10.7402 7.75027 9.53198 8.64106 8.64119C9.53186 7.75039 10.74 7.24994 11.9998 7.24994C13.2596 7.24994 14.4678 7.75039 15.3586 8.64119C16.2494 9.53198 16.7498 10.7402 16.7498 11.9999C16.7498 13.2597 16.2494 14.4679 15.3586 15.3587C14.4678 16.2495 13.2596 16.7499 11.9998 16.7499C10.74 16.7499 9.53186 16.2495 8.64106 15.3587C7.75027 14.4679 7.24982 13.2597 7.24982 11.9999Z"
+                            fill="white"></path>
+                    </svg>
+                </a>
+                <a href="https://t.me/Jetour_uzbekistan01"><i class="fa-brands fa-telegram"></i></a>
+                <a href="https://www.facebook.com/jetouruz/"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.tiktok.com/@bestunehongqiofficial?_t=8hvs0wpVMNW">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.001 2C17.524 2 22.001 6.477 22.001 12C22.001 17.523 17.524 22 12.001 22C10.2338 22.0029 8.49765 21.5352 6.97099 20.645L2.00499 22L3.35699 17.032C2.46608 15.5049 1.99804 13.768 2.00099 12C2.00099 6.477 6.47799 2 12.001 2ZM8.59299 7.3L8.39299 7.308C8.26351 7.31589 8.13697 7.3499 8.02099 7.408C7.91251 7.46943 7.81349 7.54622 7.72699 7.636C7.60699 7.749 7.53899 7.847 7.46599 7.942C7.09611 8.4229 6.89696 9.01331 6.89999 9.62C6.90199 10.11 7.02999 10.587 7.22999 11.033C7.63899 11.935 8.31199 12.89 9.19999 13.775C9.41399 13.988 9.62399 14.202 9.84999 14.401C10.9534 15.3725 12.2682 16.073 13.69 16.447L14.258 16.534C14.443 16.544 14.628 16.53 14.814 16.521C15.1052 16.506 15.3896 16.4271 15.647 16.29C15.7779 16.2225 15.9057 16.1491 16.03 16.07C16.03 16.07 16.073 16.042 16.155 15.98C16.29 15.88 16.373 15.809 16.485 15.692C16.568 15.606 16.64 15.505 16.695 15.39C16.773 15.227 16.851 14.916 16.883 14.657C16.907 14.459 16.9 14.351 16.897 14.284C16.893 14.177 16.804 14.066 16.707 14.019L16.125 13.758C16.125 13.758 15.255 13.379 14.723 13.137C14.6673 13.1127 14.6077 13.0988 14.547 13.096C14.4786 13.089 14.4094 13.0967 14.3442 13.1186C14.279 13.1405 14.2193 13.1761 14.169 13.223C14.164 13.221 14.097 13.278 13.374 14.154C13.3325 14.2098 13.2753 14.2519 13.2098 14.2751C13.1443 14.2982 13.0733 14.3013 13.006 14.284C12.9408 14.2665 12.877 14.2445 12.815 14.218C12.691 14.166 12.648 14.146 12.563 14.11C11.9891 13.8595 11.4577 13.5211 10.988 13.107C10.862 12.997 10.745 12.877 10.625 12.761C10.2316 12.3842 9.88871 11.958 9.60499 11.493L9.54599 11.398C9.50361 11.3342 9.46935 11.2653 9.44399 11.193C9.40599 11.046 9.50499 10.928 9.50499 10.928C9.50499 10.928 9.74799 10.662 9.86099 10.518C9.97099 10.378 10.064 10.242 10.124 10.145C10.242 9.955 10.279 9.76 10.217 9.609C9.93699 8.925 9.64699 8.244 9.34899 7.568C9.28999 7.434 9.11499 7.338 8.95599 7.319C8.90199 7.313 8.84799 7.307 8.79399 7.303C8.6597 7.29633 8.52513 7.29766 8.39099 7.307L8.59199 7.299L8.59299 7.3Z"
+                            fill="white"></path>
+                    </svg>
+
+                </a>
+            </div>
+            <div class="footer-email">
+                <h5>Tel.: +998 91 033 03 03</h5>
+                <h5>Email: jetouruzbg@mail.com</h5>
+            </div>
+        </div>
+        <div class="footer-end">
+            <div class="container">
+                <b>© 2023. JETOUR UZBEKISTAN</b>
+                <p><a class="text-decoration-none" href="https://www.unical.uz/">UNICAL SOLUTIONS</a> tomonidan ishlab
+                    chiqarilgan</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootsrap -->
+
+
+</body>
+
+</html>
