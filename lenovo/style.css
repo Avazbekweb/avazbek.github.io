@@ -13,6 +13,7 @@ body{
     width: 100%;
     background-color: white;
     color: black;
+    position: fixed;
       
     height:5.5vh;
 }
@@ -127,5 +128,5 @@ height: 40vh;
     display: flex;
    }
    .tag p{
-    margin-left: 30px;
+    margin-left: 30px;  
    }
