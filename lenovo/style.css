@@ -66,7 +66,6 @@ body{
     padding-left: 100px;
         color: white;
         background-image: url(./earth.png);
-        background-size: cover;
         width: 100%;
         padding: 300px 100px;
  }
@@ -76,18 +75,10 @@ body{
     padding: 30px;
     text-decoration: none;
  }
- .a1{
-    margin-left: 58%;
-    margin-top: -27.3%;
-    display: flex;
- }
- .a2{
-    display: flex;
-    margin-left: 58%;
- }
  .tag{
-    background-color: gray;
+    background-color: rgb(196, 196, 196);
 margin-top: -17.2%;
+color: black;
 width: 100%;
 height: 40vh;
  }
@@ -95,11 +86,11 @@ height: 40vh;
     display: flex;
  }
  .tag .two input{
-    border-radius: 5px;
-    height: 33px;
-    width: 250px;
+    border-radius: 1px;
+    height: 43px;
+    width: 290px;
     margin-top: 20%;
-    margin-left: 500%;
+    margin-left: 400%;
  }
  .tag .one{
     margin-left: 2%;
@@ -119,8 +110,9 @@ height: 40vh;
    }
    .last{
     display: flex;
-    margin-top: 50px;
-    color: white;
+    margin-left: -60px;
+    margin-top: 30px;
+    color: rgb(0, 0, 0);
    }
    .last i{
     padding: 10px;
@@ -129,4 +121,55 @@ height: 40vh;
    }
    .tag p{
     margin-left: 30px;  
+   } 
+   .footer div {
+      
    }
+
+   .box1{
+      border: 1px solid rgb(67, 67, 67);
+      margin-top: -27.3%;
+      margin-left: 61.4%;
+      width: 700px;
+   }
+   .boxhi{
+     
+      display: flex;
+  }
+  .boxi
+  {
+      display: flex;
+  }
+   .img1, .img2 {
+      border: 3px solid rgb(67, 67, 67);
+      width: 390px;
+      height: 330px;
+  }
+  .img3, .img4{
+      border: 3px solid rgb(67, 67, 67);
+      width: 390px;
+      height: 330px;
+  }
+  .img1:hover{
+      transition: 10s;
+      background-image: url(lenovo-pcs-tablets-hover.webp);
+      background-size: cover;
+  }
+  .img2:hover{
+      background-image: url(lenovo-phones-hover.webp);
+      background-size: cover;
+
+      
+  }
+  .img3:hover{
+      background-image: url(lenovo-smart-devices-hover.webp);
+      background-size: cover;
+
+      
+  }
+  .img4:hover{
+      background-image: url(lenovo-data-center-hover.webp);
+      background-size: cover;
+
+      
+  }
