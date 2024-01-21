@@ -4,222 +4,258 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avazbek</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <style>
-*{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: sans-serif ;
-}
-body{
-    background: #343f4f;
-}
-.warpper{
-    display: inline-flex;
-}
-.warpper .static-txt{
-color: #fff;
-height: 90px;
-font-size: 70px;
-font-weight: 400;
-
-}
-.warpper .dynamic-txts{
-margin-left: 15px;
-height: 90px;
-line-height: 90px;
-
-overflow: hidden;
-}
-.dynamic-txts li{
-    color: #FC6D6D;
-    list-style: none;
-    font-size: 70px;
-    font-weight: 500;
-    position: relative;
-    top: 0;
-    animation: slide 6s steps(4) infinite ;
-}
-@keyframes slide{
-    100%{
-        top: -360px;
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+        text-decoration: none;
+        list-style: none;
     }
+    :root{
+        --bg-color:#222327;
+        --text-color:#fff;
+        --main-color: #29fd53
 }
-
-.dynamic-txts li span{
-    position: relative;
-}
-.dynamic-txts li span::after{
-content: "";
-position: absolute;
-width: 100%;
-left: 0;
-height: 100%;
-background: #343f4f;
-border-left: 2px solid #FC6D6D;
-animation: typing 1.5s steps(10) infinite ;
-}
-@keyframes typing{
-    100%{
-        left: 100%;
-        margin: 0 -35px 0 35px;
+    body{
+        min-height: 100vh;
+        background: var(--bg-color);
+        color: var(--text-color);
     }
+    header{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        justify-content: space-between;
+        background:transparent ;
+        padding: 28px 12%;
+       transition: all .50s ease;
 }
-.navbar {
-    color: white;
-    background-color:#4c5c76 ;
-}
-.navbar h1{
-    text-shadow: 0px 0px 100px black;
-    padding: 15px;
-    font-size: 40px;
-    float: left;
-}
-.navbar ul{
-    text-align: center;
-    margin-left: 28%;
-    padding-top: 18px;
+.Logo
+{
     display: flex;
-    float: left;
+    align-items: center;
 }
-.navbar li{
-    list-style: none;
-  padding: 10px;
+.Logo i{
+    color: var(--main-color);
+    font-size: 28px;
+    margin-right: 3px;
 }
-.drop-1{
-    position: relative;
-    display: inline-block;
+.Logo h1{
+    color: var(--text-color);
+    font-size: 1.7rem;
+    font-weight: 600;
 }
-.menyu-1{
+.navbar{
+ display: flex;
+}
+.navbar a{
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 5px 0;
+    margin: 0px 30px;
+    transition:  all .50s ease;
+}
+.navbar a:hover{
+    color: var(--main-color);
+}
+.navbar a.active{
+    color: var(--main-color);
+}
+.main{
+    display: flex;
+    align-items: center;
+}
+.main a{
+    margin-right: 25px;
+    margin-left: 10px;
+    color:var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all .50s ease;
+}
+.user{
+    display: flex;
+    align-items: center;
+}
+.main{
+    color: var(--main-color);
+    font-size: 28px;
+    margin-right: 7px;
+}
+.main a:hover{
+    color: var(--main-color);
+}
+#menu-icon{
+
+    font-size: 35px;
+    color: var(--text-color)
+    ;cursor: pointer;
+    z-index: 10001;
     display: none;
+}
+@media (max-width:1280px){
+    header{
+        padding: 14px 2%;
+        transition: .2s;
+    }
+    .navbar a{
+        padding: 5px 0;
+        margin: 0px 20px;
+    }
+}
+@media (max-width:1090px){
+    #menu-icon{
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        right: 2%;
+        width: 270px;
+        height: 35vh;
+        background-color: var(--main-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 10px;
+        transition: all .50s ease;
+    }
+    .navbar a{
+        display: block;
+        margin: 12px 0;
+        padding: 0px 25px;
+        transition: all .50s ease;
+    }
+    .navbar a:hover{
+        color: var(--text-color);
+        transform: translateY(5px);
+    }
+    .navbar a.active{
+       color: var(--text-color);
+    }
+}
+@media(max-width:350px)
+{
+    .main .user{
+        gap: 10px;
+        padding: 10px;
+    }
+    .nomi
+    {
+     color: transparent;
+    }
+    h2{
+        font-size: 1.1rem;
+        margin-top: 80%;
+    }
+h2::before{
+    content: attr(data-text);
     position: absolute;
-   backdrop-filter: blur(10px);
-   color: wheat;
-    min-width: 80px;
-    box-shadow: 0px 0px 10px black;
-    padding: 12px 16px;
-    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 5%;
+    display: flex;
+    color: var(--main-color);
+    -webkit-text-stroke: 0vw var(--main-color);
+    border-right: 5px solid var(--main-color);
+    overflow: hidden;
+
 }
-.drop-1:hover .menyu-1{
-    display: block;
-}
-.menyu-1 a{
-    text-decoration: underline black;
-    color:  black;
 }
 .drop{
+  position: relative;
+  display: inline-block;
+}
+
+.menu {
+  display: none;
+  background-color: var(--bg-color);
+  min-width:50px;
+  box-shadow: 0px 8px 16px 0px var(--main-color);
+  padding: 12px 16px;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.drop:hover .menu {
+  display: block;
+}
+.footer{
+    margin-top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+h2{
     position: relative;
-    display: inline-block;
+    font-size: 10vw;
+    min-height: 100vh;
+    color: var(--bg-color);
+    -webkit-text-stroke: 0.3vw var(--main-color);
 }
-.menyu{
-    display: none;
+h2::before{
+    content: attr(data-text);
     position: absolute;
-    background-color: unset;
-    min-width: 80px;
-    box-shadow: 0px 0px 50px black;
-    padding: 12px 16px;
-    z-index: 1;
-    margin-left: -70px;
-    margin-top: 1px;
-    animation: ani 1.5s linear infinite;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 25%;
+    display: flex;  
+    color: var(--main-color);
+    -webkit-text-stroke: 0vw var(--main-color);
+    border-right: 5px solid var(--main-color);
+    overflow: hidden;
+    animation:  ani 6s linear infinite;
 }
-
-.drop:hover .menyu{
-    display: block;
-
-}
-.right{
-    border-radius: 10%;
-    margin-left: 70%;
-margin-top: 9px;
-}
-.right input{
-  padding: 10px;
-  border: 2px solid white;
-  border-radius: 5px;
-}
-.right input::placeholder{
-    color: black;
-    font-size: 20px;
-}
-form a{
-    text-decoration: none;
-    color: white;
-}
-
-.right label{
-    color: black;
-}
-@media (max-width: 900px)
-{
-  section span 
-  {
-    width: calc(10vw - 2px);
-    height: calc(10vw - 2px);
-  }
-}
-@media (max-width: 600px)
-{
-  section
-  {
-    width: calc(20vw - 2px);
-    height: calc(20vw - 2px);
-  }
+@keyframes ani{
+    0%{
+        
+        width: 0;
+    }
+    70%{
+        width: 100%;
+    }
 }
 </style>
 <body>
-<section>
-<div class="navbar">
-    <h1>Avazbek</h1>
-  <ul>
-    <li>home</li>
-    <li>about</li>
-    <li><div class="drop-1">
-        <span>works</span>
-        <div class="menyu-1">
-        
-            <a style="color: white;" href="artel/artel.html">Artel</a><br><br>
-            <a style="color: white;" href="youtube/index.html">youtube</a><br><br>
-            <a style="color: white;" href="work.html">Jetuar</a><br><br>
-            <a style="color: white;" href="xiaomi.html">Xiaomi</a><br><br>
-            <a style="color: white;" href="./lenovo/another-index.html">Lenovo</a>
-            <a style="color: white;" href="./lenovo/index.html">Lenovo</a>
-            
-        </div>
-    </div></li>
-    <li>contant</li>
-  </ul><br>
-    <div class="right">
-        <div class="drop">
-          <span><a style="color: white; text-decoration: none;" href="">Login</a></span>
-          <div class="menyu">
-            <form action=""><br>
-                <label style="color: white;" for="">Login</label><br><br>
-                <label style="color: white;" for="">Email</label><br>
-                <input type="email" placeholder="Email adress"><br><br>
-                <label style="color: white;" for="">password</label><br>
-                <input type="password" placeholder="password"><br><br>
-                <a href="">Forgot password</a>&nbsp;&nbsp;
-                <a href="">Sign in</a><br><br>
-                <input style="padding: 6px 70px; color: black; font-size: 20px; border-radius: 20px;" type="submit" value="Login"> <br>
-            </form>
-          </div>
-        </div><br><br><br>
-    </div>
-</div><br><br><br>
-<div class="footer">
-      <h1 style="color: white;margin-top: 80px;font-size: 50px; text-align: center;">welcom</h1>
-    <div style="margin-left: 30%;" class="warpper">
-        <div class="static-txt">I'am</div>
-        <ul class="dynamic-txts">
-            <li><span>DEVELOPER</span></li>
-            <li><span>DESINGER</span></li>
-            <li><span>studet</span></li>    
-            <li><span> 12 ears old</span></li>  
+    <header>
+        <a style="text-shadow: 0px 0px 10px var(--main-color);" href="" class="Logo"> <h1>Avazbek</h1></a>
+        <ul class="navbar">
+               <li><a href="#" class="active">Home</a></li>
+               <li><a href="#">About</a></li>
+               <li class="drop"><a href="#">
+                    <span>Project</span>
+                    <div class="menu"><br>
+                        <a href="artel/artel.html">Artel</a><br><br>    
+                        <a href="youtube/index.html">Youtube</a><br><br>    
+                        <a href="work.html">Jetour</a><br><br>  
+                        <a href="lenovo/another-index.html">Lenovo</a><br><br>  
+                        <a href="xiaomi.html">xiaomi</a><br><br>    
+                        
+                    </div>
+               </a></li>
+               <li><a href="#">Contant</a></li>
+               <li><a href="#">Blog</a></li>
         </ul>
+        <div class="main">
+            <a href="" class="user"><i class="fa-regular fa-user"></i>Sing in</a>
+            <div class="nom" class="bx bx-menu" id="menu-icon">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <div class="footer">
+        <h2 data-text="Avazbek...">Avazbek...</h2>
     </div>
-</div>
-</section>
 </body>
 </html>
