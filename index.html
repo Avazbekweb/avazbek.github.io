@@ -4,21 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    body{
+        background-color: rgb(21, 21, 21);
+        color: white;
+    }
+    .container{
+        width: 100%;
+        height: 100vh;
+    }
+    .nav{
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 300px;
+    }
+    .nav ul{
+        display: flex;
+        list-style: none;
+    }
+    button{
+        padding: 7px 19px;
+        border: 9px;
+        border: none;
+        margin-top: 10px;
+        background-color: transparent;
+        color: white;
+        border: 2px solid green;
+        transition:  ease 1s  ;
+        cursor: pointer;
+    }
+    button:hover{
+        transition:  1s ease ;
+        background-color: green;
+    }
+    .nav li{
+        margin-left: 40px;
+    }
+    .nav a{
+        position: relative;
+        font-weight: 600;
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+}
+    .nav a::before{
+     content: "";
+     position: absolute;
+     bottom:-8px;
+     height: 3px ;
+     width: 0;
+     background: green;
+     border-radius: 50px;
+     transition: width 0.3s ease;
+    }
+    .nav a:hover::before{
+        width: 60px;
+    }
+    .war{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 200px;
+    } 
+    .nav i{
+        display: none;
+    }
+     @media screen and (max-width:1190px) {
+        .nav{
+            padding: 0px 10px;
+        
+        }
+     }  
+     @media screen and (max-width :550px) {
+        .nav{
+            display: block;
+            padding: 5px;
+            align-items: center;
+            text-align: center;
+        }
+        .nav ul{
+            text-align: center;
+        }
+        .war{
+            text-align: center;
+            flex-wrap: wrap;
+        }
+     }
+
+</style>
 <body>
     <div class="container">
        <div class="nav">
         <h1>Avabek</h1>
+        
         <ul>
             <li><a href="">Home</a></li>
             <li><a href="">About</a></li>
             <li><a href="">Service</a></li>
             <li><a href="">Contact</a></li>
+
         </ul>
-       </div> 
+
+        
+       </div>
        <div class="war">
         <h1>Welcome</h1>
-       </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, sequi.</p>
+    <button>About</button>
+   </div> 
     </div>
 </body>
 </html>
