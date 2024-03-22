@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    width: 210px;
+    margin-left: -26px;
+    margin-top: -10px;
+    height: 110vh;
+}
+.background{
+    width: 190%;
+    height: 100vh;
+    background-image: url(background.jpg);
+    background-size: cover;
+
+}
+
+@media screen and (max-width:350px) {
+    .navbar{
+        width: 150px;
+    }
+    .navbar img{
+        width: 120px;
+    }
+}
+@media screen and (max-width:855px) {
+    * div p{
+        width: 300px;
+    }
+}
