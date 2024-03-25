@@ -26,8 +26,108 @@
         width: 120px;
     }
 }
-@media screen and (max-width:855px) {
-    * div p{
+.w300px{
+    width: 300px;
+}
+.w400px{
+    width: 400px;
+}
+.w600px{
+    width: 600px;
+}
+.w700px{
+    width: 700px;
+}
+.w900px{
+    width: 700px;
+}
+@media screen and (max-width:900px) {
+    .w700px{
+        width: 500px;
+    }
+    .w900px{
+        width: 500px;
+    }
+}
+@media screen and (max-width:675px) {
+    .w700px{
+        width:300px;
+    }
+    .w900px{
         width: 300px;
+    }
+    #por img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .progress-bar{
+        width: 100vh;
+    }
+    .w400px{
+        width: 200px;
+    }
+    #por img{
+        margin-left: -100px;
+    }
+    .w300px{
+        width: 100px;
+    }
+    .h1{
+        width: 400px;
+    }
+    .w600px{
+        width: 200px;
+    }
+    .por img{
+        padding: 10px -10px;
+    }
+}
+@media screen and (max-width:575px) {
+    .w900px{
+        width: 200px;
+    }
+    .w700px{
+        width: 200px;
+    }
+    .h1{
+        width: 200px;
+    }
+    .progress-bar{
+        margin-left: -10px;
+    }
+}
+@media screen and (max-width:500px) {
+    #por img{
+        width: 260px;
+    }
+    #about img{
+        width: 260px;
+    }
+    #about ul{
+        margin-left: 0px;
+    }
+}
+@media screen and (max-width:470px) {
+    #por img{
+        width: 240px;
+    }
+    .w900px{
+        width: 200px;
+    }
+    #about  img{
+      width: 240px;
+    }
+     #Bars .progress .progress-bar{
+        margin-left: -100px;
+     }
+
+}
+@media screen and (max-width:440px) {
+    #por img{
+        width: 200px;
+    }
+    .w400px{
+        width: 100px;
     }
 }
